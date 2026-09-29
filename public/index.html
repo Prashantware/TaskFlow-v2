@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TaskFlow – My Tasks</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="app">
+    <div class="topbar">
+      <h1>Task<span>Flow</span></h1>
+      <div class="userbox">
+        <a href="profile.html" title="My profile">
+          <div class="avatar" id="avatar"></div>
+          <div><div class="uname" id="uname"></div><span class="role" id="urole"></span></div>
+        </a>
+        <button class="link-btn" id="logout">Logout</button>
+      </div>
+    </div>
+    <p class="subtitle" id="greeting"></p>
+
+    <form id="task-form" class="add-form">
+      <input id="t-title" class="full" placeholder="What needs to be done?" maxlength="200" required />
+      <select id="t-category"></select>
+      <select id="t-priority">
+        <option value="low">Low priority</option>
+        <option value="medium" selected>Medium priority</option>
+        <option value="high">High priority</option>
+      </select>
+      <input id="t-subject" placeholder="Subject (e.g. Maths)" maxlength="80" hidden />
+      <input id="t-due" type="date" title="Due date" />
+      <button type="submit" class="btn btn-primary">Add task</button>
+    </form>
+
+    <div class="toolbar">
+      <div class="filters">
+        <button class="filter active" data-filter="all">All</button>
+        <button class="filter" data-filter="active">Active</button>
+        <button class="filter" data-filter="done">Done</button>
+      </div>
+      <span id="counter" class="counter"></span>
+    </div>
+
+    <ul id="task-list" class="task-list"></ul>
+    <p id="empty" class="empty" hidden>Nothing here yet — add your first task ✨</p>
+    <p id="error" class="error" hidden></p>
+  </main>
+  <script src="auth.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

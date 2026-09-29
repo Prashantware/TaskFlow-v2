@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TaskFlow – Profile</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="app">
+    <div class="topbar">
+      <h1>Task<span>Flow</span></h1>
+      <div class="userbox">
+        <a class="link-btn" href="index.html">← My tasks</a>
+        <button class="link-btn" id="logout">Logout</button>
+      </div>
+    </div>
+
+    <div class="profile-head">
+      <div class="avatar big" id="avatar"></div>
+      <div>
+        <h2 id="pname" style="margin:0"></h2>
+        <div style="color:var(--muted);font-size:.9rem" id="pemail"></div>
+        <span class="role" id="prole"></span>
+        <div id="pbio" style="margin-top:6px;font-size:.9rem"></div>
+      </div>
+    </div>
+
+    <div class="stats">
+      <div class="stat"><b id="s-total">0</b><small>Total</small></div>
+      <div class="stat"><b id="s-done">0</b><small>Completed</small></div>
+      <div class="stat"><b id="s-pending">0</b><small>Pending</small></div>
+      <div class="stat"><b id="s-overdue">0</b><small>Overdue</small></div>
+    </div>
+    <div class="bar"><div id="bar"></div></div>
+    <div id="s-pct" class="counter" style="margin-top:6px"></div>
+
+    <h2>Edit profile</h2>
+    <form id="profile-form">
+      <label>Full name</label><input id="f-name" required maxlength="60" />
+      <label>Phone</label><input id="f-phone" maxlength="20" />
+      <label>Bio</label><textarea id="f-bio" rows="2" maxlength="200"></textarea>
+      <div id="student-fields" hidden>
+        <label>College / School</label><input id="f-college" maxlength="80" />
+        <label>Course</label><input id="f-course" maxlength="80" />
+        <label>Year</label><input id="f-year" maxlength="20" />
+      </div>
+      <button class="btn btn-primary btn-block" type="submit">Save profile</button>
+      <p id="p-msg" hidden></p>
+    </form>
+
+    <h2>Change password</h2>
+    <form id="pass-form">
+      <label>Current password</label><input type="password" id="c-pass" required />
+      <label>New password (min 6)</label><input type="password" id="n-pass" minlength="6" required />
+      <button class="btn btn-primary btn-block" type="submit">Update password</button>
+      <p id="w-msg" hidden></p>
+    </form>
+  </main>
+  <script src="auth.js"></script>
+  <script src="profile.js"></script>
+</body>
+</html>
